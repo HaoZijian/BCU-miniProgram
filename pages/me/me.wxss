@@ -1,0 +1,44 @@
+/* pages/me/me.wxss */
+.info {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  margin-top: 50rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+
+.text {
+  width: 400rpx;
+  margin-top: 40rpx;
+  font-family: Roboto;
+}
+
+.name {
+  width: 400rpx;
+  font-size: 52rpx;
+  font-weight: 400;
+}
+
+.detail {
+  width: 400rpx;
+  font-size: 26rpx;
+}
+
+.photo {
+  width: 220rpx;
+  height: 220rpx;
+}
+
+.circle {
+  margin: 0 auto;
+}
+
+.circle image {
+  border-radius: 50%;
+}
+
+
+.grid {
+  margin-top: 50rpx;
+}

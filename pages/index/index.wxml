@@ -1,0 +1,10 @@
+<view class="page">
+  <view class="title">欢迎来到活动中心!</view>
+  <van-search value="{{ value }}" placeholder="请输入搜索关键词" left-icon right-icon="search"/>
+  <view class="items">
+    <view class="act-area" wx:for-items="{{taskList}}" wx:key="id" data-index="{{item.id}}" bindtap="toDetailPage">
+      <image class="img" src="{{item.aimg}}"></image>
+      <view class="name">{{item.aname}}</view>
+    </view>
+  </view>
+</view>

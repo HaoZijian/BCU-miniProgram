@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/me/me",
+    "pages/login/login",
+    "pages/detail/detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "二课分管理系统",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#2c2c2c",
+    "selectedColor": "#707070",
+    "borderStyle": "black",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "/images/home.png",
+      "selectedIconPath": "/images/selHome.png"
+    }, {
+      "pagePath": "pages/me/me",
+      "text": "我的",
+      "iconPath": "/images/me.png",
+      "selectedIconPath": "/images/selMe.png"
+    }]
+  }
+ 
+
+}

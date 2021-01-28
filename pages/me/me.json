@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-row": "/@vant/weapp/dist/row/index",
+    "van-col": "/@vant/weapp/dist/col/index",
+    "van-grid": "/@vant/weapp/dist/grid/index",
+    "van-grid-item": "/@vant/weapp/dist/grid-item/index"
+  }
+}

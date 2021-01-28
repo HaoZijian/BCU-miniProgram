@@ -1,0 +1,33 @@
+<!--pages/me/me.wxml-->
+<view class="page">
+  <van-row>
+    <view class="info">
+      <van-col span="4" class="circle">
+        <image wx:if="{{canShow}}" class="photo" src="/images/photo.png" bindtap="toLoginPage"></image>
+        <image wx:else class="photo" src="{{img}}"></image>
+      </van-col>
+      <van-col span="8" class="text">
+        <view wx:if="{{canShow}}" class="name">请点击头像登录</view>
+        <view wx:else class="name">{{name}}</view>
+        <view class="detail">
+          <text wx:if="{{canShow}}"></text>
+          <text wx:else>{{xuebu}} {{class}} {{number}}</text>
+        </view>
+      </van-col>
+    </view>
+    <view class="grid">
+      <van-grid>
+        <van-grid-item icon="photo-o" text="我的活动" />
+        <van-grid-item icon="photo-o" text="我的证书" />
+        <van-grid-item icon="photo-o" text="我的竞赛" />
+        <van-grid-item icon="photo-o" text="资料管理" />
+      </van-grid>
+      <van-grid>
+        <van-grid-item icon="photo-o" text="消息" />
+        <van-grid-item icon="photo-o" text="公告" />
+        <van-grid-item icon="photo-o" text="联系客服" />
+        <van-grid-item icon="photo-o" text="关于我们" />
+      </van-grid>
+    </view>
+  </van-row>
+</view>

@@ -1,0 +1,26 @@
+/* pages/login/login.wxss */
+.page {
+  margin-top: 50rpx;
+}
+
+.info {
+  margin-bottom: 50rpx;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 60rpx;
+  text-align: center;
+}
+
+.loginBtn {
+  width: 360rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #008c8c;
+  box-shadow: 0rpx 20rpx 60rpx rgba(0, 0, 0, 0.2);
+  border-radius: 14rpx;
+  font-size: 32rpx;
+  font-family: Roboto;
+  font-weight: 500;
+  color: #ffffff;
+  margin-top: 50rpx;
+}

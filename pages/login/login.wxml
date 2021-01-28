@@ -1,0 +1,14 @@
+<view class="page">
+  <view class="info">
+    <text>欢迎使用二课分管理系统</text>
+  </view>
+  <van-cell-group>
+    <van-field value="{{ username }}" label="用户名" placeholder="请输入您的学号" bind:change="changeUsername"/>
+    <van-field value="{{ password }}" label="密码" type="password" placeholder="请输入密码" bind:change="changePassword"/>
+    <van-cell title="请选择身份" is-link bind:click="showPopup" value="{{value1}}" />
+    <van-popup show="{{ show }}" bind:close="onClose" position="bottom" custom-style="height: 42%" closeable>
+      <van-picker value="{{logintype}}" columns="{{ columns }}" bind:change="onChange" default-index="{{index}}" />
+    </van-popup>
+  </van-cell-group>
+  <button class="loginBtn" bindtap="login">确认登录</button>
+</view>
