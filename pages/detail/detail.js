@@ -5,13 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id: '',
-    aname: '',
-    atime: '',
-    aimg: '',
-    apalce: '',
-    anumber: '',
-    aebranch: '',
+    detail:[]
   },
 
   /**
@@ -20,14 +14,11 @@ Page({
   onLoad: function (options) {
     var that = this;
     wx.request({
-      url: 'https://bcuscm.mauac.com/applets/api.Activity/activity',
+      url: 'https://bcuscm.mauac.com/applets/api.Activity/activityinfo',
       method: 'POST',
       data: {
-        id: '',
-        aname: '',
-        sort: '',
-        atime: '',
-        aimg: '',
+        aid: 25,
+        logintype: 2
       },
       header: {
         'content-Type': 'application/x-www-form-urlencoded'
@@ -35,7 +26,7 @@ Page({
       success: res => {
         console.log(res.data.data)
         that.setData({
-          
+          detail:res.data.data
         })
       },
       fail: error => {

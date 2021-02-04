@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    list:[]
   },
 
   /**
@@ -13,18 +13,19 @@ Page({
    */
   onLoad: function (options) {
     wx.request({
-      url: 'https://bcuscm.mauac.com/applets/api.Appletslogin/appletslogin',
+      url: 'https://bcuscm.mauac.com/applets/api.Activity/signList',
       method: 'POST',
       data: {
-        password: '',
-        username: '' , 
-        logintype: ''
+        logintype:1,
+        uname:wx.getStorageSync('number')
       },
       header: {
         'content-Type': 'application/x-www-form-urlencoded'
       },
       success: res =>{
-        console.log(res.data)
+        this.setData({
+          list:res.data.data
+        })
       },
     })
   },

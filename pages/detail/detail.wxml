@@ -2,15 +2,15 @@
 <view class="page"> 
   <view class="top">
     <van-icon name="diamond-o" />
-    <view  class="act-name">{{aname}}</view>
+    <view  class="act-name">{{detail.aname}}</view>
   </view>
-  <view class="act-creator">发起人：XXX</view>
-  <image src="/images/1.png" class="act-img"></image>
+  <!-- <view class="act-creator">发起人：XXX</view> -->
+  <image src="{{detail.aimg}}" class="act-img"></image>
   <van-divider contentPosition="center">活动详情</van-divider>
   <view class="info">
-    <view class="text">时间：2020-09-01 - 2020-10-10</view>
-    <view class="text">地点：3s125</view>
-    <view class="text">二课分分值：5分</view>
-    <view class="text">限报人数：10人</view>
+    <view class="text">时间：{{detail.atime}}</view>
+    <view class="text">地点：{{detail.aplace}}</view>
+    <view class="text">二课分分值：{{detail.aebranch}}</view>
+    <view class="text">报名人数：{{detail.bmcount}}/{{detail.anumber}}</view>
   </view>
 </view>
