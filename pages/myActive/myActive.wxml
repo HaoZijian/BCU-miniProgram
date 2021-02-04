@@ -1,0 +1,10 @@
+<!--pages/myActive/myActive.wxml-->
+<view class="page">
+  <view class="title">活动列表</view>
+  <view class="item">
+    <van-card thumb="{{ imageURL }}">
+      <view slot="title" class="text">测试活动</view>
+      <view slot="desc" class="text">2020-10-10</view>
+    </van-card>
+  </view>
+</view>

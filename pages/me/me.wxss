@@ -3,14 +3,13 @@
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-around;
-  margin-top: 50rpx;
+  margin-top: 40rpx;
   margin-left: 30rpx;
   margin-right: 30rpx;
 }
 
 .text {
-  width: 400rpx;
-  margin-top: 40rpx;
+  margin-top: 24rpx;
   font-family: Roboto;
 }
 
@@ -22,7 +21,11 @@
 
 .detail {
   width: 400rpx;
-  font-size: 26rpx;
+  font-size: 28rpx;
+}
+
+.score {
+  font-size: 28rpx;
 }
 
 .photo {

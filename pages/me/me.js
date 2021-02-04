@@ -12,6 +12,12 @@ Page({
     canShow: true,
   },
 
+  toMyActive() {
+    wx.navigateTo({
+      url: '/pages/myActive/myActive',
+    })
+  },
+
   toLoginPage() {
     wx.navigateTo({
       url: '/pages/login/login',

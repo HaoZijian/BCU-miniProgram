@@ -1,0 +1,13 @@
+/* pages/myActive/myActive.wxss */
+.title {
+  font-size: 44rpx;
+  font-family: Roboto;
+  font-weight: 500;
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.text {
+  font-size: 30rpx;
+}
