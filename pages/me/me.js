@@ -10,6 +10,7 @@ Page({
     xuebu: '',
     class: '',
     canShow: true,
+    ebranch: wx.getStorageSync('ebranch')
   },
 
   toMyActive() {

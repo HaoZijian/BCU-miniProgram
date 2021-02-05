@@ -13,7 +13,7 @@
           <text wx:if="{{canShow}}"></text>
           <text wx:else>{{xuebu}} {{class}} {{number}}</text>
         </view>
-        <view class="score">总分:100分</view>
+        <view class="score">二课分:{{ebranch}}</view>
       </van-col>
     </view>
     <view class="grid">

@@ -81,6 +81,10 @@ Page({
           data: res.data.data.token,
           key: 'token',
         })
+        wx.setStorage({
+          data: res.data.data.ebranch,
+          key: 'ebranch',
+        })
 
         if(res.data.code == 0) {
           wx.navigateBack({
