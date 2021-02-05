@@ -17,7 +17,7 @@ Page({
       url: 'https://bcuscm.mauac.com/applets/api.Activity/activityinfo',
       method: 'POST',
       data: {
-        aid: 25,
+        aid: wx.getStorageSync('currentActivity'),
         logintype: 2
       },
       header: {

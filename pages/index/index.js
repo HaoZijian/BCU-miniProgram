@@ -5,7 +5,8 @@ Page({
     value:''
   },
 
-  toDetailPage() {
+  toDetailPage(res) {
+    wx.setStorageSync('currentActivity', res.currentTarget.dataset.index)
     wx.navigateTo({
       url: '/pages/detail/detail',
     })
