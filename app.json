@@ -4,7 +4,8 @@
     "pages/me/me",
     "pages/login/login",
     "pages/detail/detail",
-    "pages/myActive/myActive"
+    "pages/myActive/myActive",
+    "pages/verifyList/verifyList"
   ],
   "window": {
     "backgroundTextStyle": "light",

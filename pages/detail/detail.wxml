@@ -13,4 +13,5 @@
     <view class="text">二课分分值：{{detail.aebranch}}</view>
     <view class="text">报名人数：{{detail.bmcount}}/{{detail.anumber}}</view>
   </view>
+  <button class="signUpBtn">立即报名</button>
 </view>

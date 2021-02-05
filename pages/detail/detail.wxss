@@ -7,15 +7,17 @@
 .top van-icon{
   float: left;
   font-size: 40rpx;
-  padding-top: 10rpx;
+  padding-top: 12rpx;
   padding-right: 8rpx;
 }
 
 .act-name {
+  padding-left: 20rpx;
   font-size: 48rpx;
   font-weight: 400;
   font-family: Roboto;
   float: left;
+  text-align: center;
 }
 
 .act-img {
@@ -41,4 +43,18 @@
 
 .text {
   margin-bottom: 20rpx;
+}
+
+.signUpBtn {
+  width: 300rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #7cbe45;
+  box-shadow: 0rpx 20rpx 60rpx rgba(0, 0, 0, 0.2);
+  border-radius: 14rpx;
+  font-size: 32rpx;
+  font-family: Roboto;
+  font-weight: 500;
+  color: #ffffff;
+  margin-top: 50rpx;
 }

@@ -1,5 +1,6 @@
+<!--pages/verifyList/verifyList.wxml-->
 <view class="page">
-  <view class="title">活动列表</view>
+  <view class="title">审核列表</view>
   <view class="option-item">
     <view class="options">
       <van-row>
@@ -14,8 +15,17 @@
             <view class="text">申请人：郝梓荐</view>
           </van-col>
         </view>
+        <view class="btn-area">
+          <van-col span="8">
+            <button class="btn">通过</button>
+            <button class="btn1">不通过</button>
+          </van-col>
+        </view>
+
+
       </van-row>
     </view>
+
   </view>
 
 </view>

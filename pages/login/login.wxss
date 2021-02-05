@@ -15,7 +15,7 @@
   width: 360rpx;
   height: 100rpx;
   line-height: 100rpx;
-  background-color: #008c8c;
+  background-color:  #7cbe45;
   box-shadow: 0rpx 20rpx 60rpx rgba(0, 0, 0, 0.2);
   border-radius: 14rpx;
   font-size: 32rpx;
