@@ -1,17 +1,17 @@
 <view class="page">
   <view class="title">活动列表</view>
   <view class="option-item">
-    <view class="options">
+    <view class="options" wx:for-items="{{list}}" wx:key="id" data-index="{{item.id}}" bindtap="toDetailPage">
       <van-row>
         <van-col span="8">
-          <image class="img" src="/images/1.png"></image>
+          <image class="img" src="{{item.aimg}}"></image>
         </van-col>
         <view class="text-area">
           <van-col span="8">
-            <view class="text">名称：喝茶</view>
-            <view class="text">日期：2021-1-12</view>
-            <view class="text">地点：3s112</view>
-            <view class="text">申请人：郝梓荐</view>
+            <view class="text">名称：{{item.aname}}</view>
+            <view class="text">日期：{{item.atime}}</view>
+            <view class="text">地点：{{item.aplace}}</view>
+            <!-- <view class="text">申请人：{{ name }}</view> -->
           </van-col>
         </view>
       </van-row>

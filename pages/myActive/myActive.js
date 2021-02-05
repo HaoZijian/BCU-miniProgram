@@ -5,9 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list:[]
+    list:[],
+    name:wx.getStorageSync('name')
   },
-  
+
   toDetailPage(res) {
     wx.setStorageSync('currentActivity', res.currentTarget.dataset.index)
     wx.navigateTo({

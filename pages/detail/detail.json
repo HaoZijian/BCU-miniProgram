@@ -3,6 +3,7 @@
     "van-row": "/@vant/weapp/dist/row/index",
     "van-col": "/@vant/weapp/dist/col/index",
     "van-divider": "/@vant/weapp/dist/divider/index",
-    "van-icon": "/@vant/weapp/dist/icon/index"
+    "van-icon": "/@vant/weapp/dist/icon/index",
+    "van-notify": "/@vant/weapp/dist/notify/index"
   }
 }

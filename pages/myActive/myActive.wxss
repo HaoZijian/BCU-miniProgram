@@ -48,7 +48,8 @@
 }
 
 .text {
-  font-size: 28rpx
+  font-size: 28rpx;
+  width: 400rpx;
 }
 
 .btn {

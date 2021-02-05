@@ -1,5 +1,6 @@
 <!--pages/detail/detail.wxml-->
 <view class="page"> 
+  <van-notify id="van-notify" />
   <view class="top">
     <van-icon name="diamond-o" />
     <view  class="act-name">{{detail.aname}}</view>
@@ -13,5 +14,6 @@
     <view class="text">二课分分值：{{detail.aebranch}}</view>
     <view class="text">报名人数：{{detail.bmcount}}/{{detail.anumber}}</view>
   </view>
-  <button class="signUpBtn">立即报名</button>
+  <button wx:if="{{detail.issign}}" class="signUpBtn" bindtap="sign">取消报名</button>
+  <button wx:else class="signUpBtn" bindtap="sign">立即报名</button>
 </view>

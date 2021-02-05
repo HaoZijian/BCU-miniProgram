@@ -77,6 +77,10 @@ Page({
           data: res.data.data.class,
           key: 'class',
         })
+        wx.setStorage({
+          data: res.data.data.token,
+          key: 'token',
+        })
 
         if(res.data.code == 0) {
           wx.navigateBack({

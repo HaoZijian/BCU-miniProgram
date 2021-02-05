@@ -1,13 +1,12 @@
 // pages/detail/detail.js
+import Notify from '../../@vant/weapp/dist/notify/notify';
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
     detail:[]
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -18,7 +17,8 @@ Page({
       method: 'POST',
       data: {
         aid: wx.getStorageSync('currentActivity'),
-        logintype: 2
+        logintype: 2,
+        uname: wx.getStorageSync('number')
       },
       header: {
         'content-Type': 'application/x-www-form-urlencoded'
@@ -34,7 +34,41 @@ Page({
       }
     })
   },
-
+  sign() {
+    var that=this
+    wx.request({
+      url: 'https://bcuscm.mauac.com/applets/api.Activity/activityStudentSign',
+      method: 'POST',
+      data: {
+        aid: wx.getStorageSync('currentActivity'),
+        logintype: 2,
+        uname: wx.getStorageSync('number'),
+        token: wx.getStorageSync('token')
+      },
+      header: {
+        'content-Type': 'application/x-www-form-urlencoded'
+      },
+      success: res => {
+        switch (res.data.code){
+          case 0:
+            that.setData({
+              "detail.issign":1
+            })
+            Notify({ type: 'success', message: '报名成功' });break;
+          case 1:
+            that.setData({
+              "detail.issign":0
+            })
+            Notify({ type: 'warning', message: '取消报名' });break;
+          default:
+            Notify({ type: 'danger', message: '请求失败' });break;
+        }
+      },
+      fail: error => {
+        console.log(error);
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
