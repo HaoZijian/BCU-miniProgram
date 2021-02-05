@@ -1,7 +1,7 @@
 <!--pages/myActive/myActive.wxml-->
 <view class="page">
   <view class="title">活动列表</view>
-  <view class="item"  wx:for-items="{{list}}" wx:key="id" data-index="{{item.id}}">
+  <view class="item"  wx:for-items="{{list}}" wx:key="id" data-index="{{item.id}}" bindtap="toDetailPage">
     <van-card thumb="{{item.aimg}}">
       <view slot="title" class="text">{{item.aname}}</view>
       <view slot="desc" class="text">{{item.atime}}</view>
