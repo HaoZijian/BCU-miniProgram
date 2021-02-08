@@ -1,22 +1,14 @@
 .top {
-  display: inline-block;
   margin-top: 30rpx;
-  margin-left: 250rpx;
-}
-
-.top van-icon{
-  float: left;
-  font-size: 40rpx;
-  padding-top: 12rpx;
-  padding-right: 8rpx;
 }
 
 .act-name {
-  padding-left: 20rpx;
-  font-size: 48rpx;
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 40rpx;
   font-weight: 400;
   font-family: Roboto;
-  float: left;
   text-align: center;
 }
 
@@ -24,7 +16,7 @@
   width: 400rpx;
   height: 320rpx;
   box-shadow: 0rpx 20rpx 60rpx rgba(0, 0, 0, 0.1);
-  margin-left: 180rpx;
+  margin-left: 172rpx;
   margin-top: 50rpx;
 }
 

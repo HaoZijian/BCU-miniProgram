@@ -41,5 +41,9 @@ Page({
           console.log(error);
         }
       })
-  }
+  },
+
+  onShow: function () {
+    this.getTabBar().init();
+  },
 })

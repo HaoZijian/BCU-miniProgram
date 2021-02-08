@@ -2,7 +2,6 @@
 <view class="page"> 
   <van-notify id="van-notify" />
   <view class="top">
-    <van-icon name="diamond-o" />
     <view  class="act-name">{{detail.aname}}</view>
   </view>
   <!-- <view class="act-creator">发起人：XXX</view> -->

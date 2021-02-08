@@ -15,21 +15,20 @@
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {
-    "color": "#2c2c2c",
-    "selectedColor": "#707070",
-    "borderStyle": "black",
+    "custom": true,
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#000000",
     "list": [{
-      "pagePath": "pages/index/index",
-      "text": "首页",
-      "iconPath": "/images/home.png",
-      "selectedIconPath": "/images/selHome.png"
-    }, {
-      "pagePath": "pages/me/me",
-      "text": "我的",
-      "iconPath": "/images/me.png",
-      "selectedIconPath": "/images/selMe.png"
-    }]
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的"
+      }
+    ]
   }
- 
+
 
 }

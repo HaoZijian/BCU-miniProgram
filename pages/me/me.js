@@ -43,6 +43,7 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
+    this.getTabBar().init();
     wx.getStorage({
       key: 'number',
       success: res => {
