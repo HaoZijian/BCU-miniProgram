@@ -8,6 +8,10 @@ Component({
       "text": "首页"
     },
     {
+      "icon": "scan",
+      "text": "扫码签到"
+    },
+    {
       "url": "/pages/me/me",
       "icon": "user-circle-o",
       "text": "我的"

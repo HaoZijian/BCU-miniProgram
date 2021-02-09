@@ -2,7 +2,9 @@ const app = getApp()
 
 Page({
   data: {
-    value:''
+    value:'',
+    inputVal: '',
+    uname: ''
   },
 
   toDetailPage(res) {
