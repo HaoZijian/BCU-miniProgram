@@ -45,3 +45,10 @@
 .grid {
   margin-top: 50rpx;
 }
+
+.title-1 {
+  position: absolute;
+  top: 110rpx;
+  left: 340rpx;
+  font-size: 48rpx;
+}

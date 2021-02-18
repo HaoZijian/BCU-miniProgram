@@ -7,13 +7,14 @@
         <image wx:else class="photo" src="{{img}}"></image>
       </van-col>
       <van-col span="10" class="text">
-        <view wx:if="{{canShow}}" class="name">请点击头像登录</view>
+        <view wx:if="{{canShow}}"></view>
         <view wx:else class="name">{{name}}</view>
         <view class="detail">
-          <text wx:if="{{canShow}}"></text>
+          <text wx:if="{{canShow}}" class="title-1">请点击左侧登录</text>
           <text wx:else>{{xuebu}} {{class}} {{number}}</text>
         </view>
-        <view class="score">二课分: {{ebranch}}</view>
+        <view wx:if="{{canShow}}"></view>
+        <view wx:else class="score">二课分: {{ebranch}}</view>
       </van-col>
     </view>
     <view class="grid">
