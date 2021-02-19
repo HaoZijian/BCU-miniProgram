@@ -6,7 +6,7 @@ Component({
         "url": "/pages/index/index",
         "icon": "wap-home-o",
         "text": "首页",
-        "type": 1
+        "type": 0
       },
       {
         "id":1,
@@ -27,7 +27,7 @@ Component({
         "url": "/pages/me/me",
         "icon": "user-circle-o",
         "text": "我的",
-        "type": 1
+        "type": 0
       }
     ],
     aid: null,
