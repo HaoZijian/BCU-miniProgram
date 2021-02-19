@@ -1,3 +1,4 @@
+const app = getApp()
 Component({
   data: {
     active: 0,
@@ -35,7 +36,6 @@ Component({
   },
   methods: {
     onChange(e) {
-      console.log(e)
       this.setData({
         active: e.detail
       });
@@ -71,7 +71,8 @@ Component({
     init() {
       const page = getCurrentPages().pop();
       this.setData({
-        active: this.data.list.findIndex(item => item.url === `/${page.route}`)
+        active: this.data.list.findIndex(item => item.url === `/${page.route}`),
+        type: wx.getStorageSync('type')
       });
     }
   }
