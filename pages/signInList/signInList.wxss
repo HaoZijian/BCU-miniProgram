@@ -1,0 +1,82 @@
+.page {
+  height: 100%;
+  overflow-x: hidden;
+  font-family: Roboto;
+}
+
+.title {
+  text-align: left;
+  font-size: 46rpx;
+  font-family: Roboto;
+  font-weight: 500;
+  margin-left: 30rpx;
+}
+
+.option-item {
+  width: 800rpx;
+  height: 100%;
+  padding-top: 40rpx;
+  margin-bottom: 20rpx;
+}
+
+.options {
+  width: 700rpx;
+  height: 220rpx;
+  background: #FFFFFF;
+  box-shadow: -2rpx 20rpx 60rpx rgba(0, 0, 0, 0.1);
+  border-radius: 12rpx;
+  margin-left: 30rpx;
+  margin-bottom: 50rpx;
+}
+
+.img {
+  width: 160rpx;
+  height: 140rpx;
+  padding-top: 40rpx;
+  padding-left: 30rpx;
+  padding-right: 20rpx;
+}
+
+.text-area {
+  width: 100%;
+  font-family: Roboto;
+  font-weight: 400;
+  color: #757B7E;
+  text-align: left;
+  padding-top: 50rpx;
+}
+
+.text {
+  font-size: 30rpx
+}
+
+.btn {
+  width: 160rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color: #7cbe45;
+  box-shadow: 0rpx 20rpx 60rpx rgba(0, 0, 0, 0.2);
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  font-family: Roboto;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.btn-area {
+  padding-bottom: 12rpx;
+}
+
+.btn1 {
+  width: 160rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color: #aab3be;
+  box-shadow: 0rpx 20rpx 60rpx rgba(0, 0, 0, 0.2);
+  border-radius: 4rpx;
+  font-size: 28rpx;
+  font-family: Roboto;
+  font-weight: 400;
+  color: #ffffff;
+  margin-top: 18rpx;
+}

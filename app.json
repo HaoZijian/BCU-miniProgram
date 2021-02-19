@@ -5,7 +5,8 @@
     "pages/login/login",
     "pages/detail/detail",
     "pages/myActive/myActive",
-    "pages/verifyList/verifyList"
+    "pages/verifyList/verifyList",
+    "pages/signInList/signInList"
   ],
   "window": {
     "backgroundTextStyle": "light",
