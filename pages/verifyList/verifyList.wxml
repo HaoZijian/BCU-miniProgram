@@ -1,6 +1,6 @@
 <!--pages/verifyList/verifyList.wxml-->
 <view class="page">
-  <view class="title">活动审核</view>
+  <view class="title">加分审核</view>
   <view class="option-item">
     <view class="options">
       <van-row>

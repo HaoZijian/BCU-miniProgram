@@ -59,11 +59,11 @@ Page({
         if (res.data.code == 0) {
           console.log(res.data.data)
           wx.setStorage({
-            data: res.data.data.number,
+            data: res.data.data.username,
             key: 'number',
           })
           wx.setStorage({
-            data: res.data.data.sname,
+            data: res.data.data.sname||res.data.data.tname,
             key: 'name',
           })
           wx.setStorage({

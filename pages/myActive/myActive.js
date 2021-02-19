@@ -10,10 +10,18 @@ Page({
   },
 
   toDetailPage(res) {
-    wx.setStorageSync('currentActivity', res.currentTarget.dataset.index)
-    wx.navigateTo({
-      url: '/pages/detail/detail',
-    })
+    if(wx.getStorageSync('type')==1){
+      wx.setStorageSync('currentActivity', res.currentTarget.dataset.index)
+      wx.navigateTo({
+        url: '/pages/detail/detail',
+      })
+    }else{
+      wx.setStorageSync('currentActivity', res.currentTarget.dataset.index)
+      wx.navigateTo({
+        url: '/pages/verifyList/verifyList',
+      })
+    }
+
   },
   /**
    * 生命周期函数--监听页面加载
@@ -23,7 +31,7 @@ Page({
       url: 'https://bcuscm.mauac.com/applets/api.Activity/signList',
       method: 'POST',
       data: {
-        logintype:1,
+        logintype:wx.getStorageSync('type'),
         uname:wx.getStorageSync('number')
       },
       header: {
