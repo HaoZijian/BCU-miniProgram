@@ -17,10 +17,10 @@ Component({
         "type": 1
       },
       {
+        "url": "/pages/newActive/newActive",
         "id":2,
         "icon": "plus",
         "text": "新增活动",
-        "flag": 2,
         "type": 2
       },
       {

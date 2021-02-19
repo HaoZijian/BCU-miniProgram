@@ -1,5 +1,7 @@
 .page {
   margin-top: 10rpx;
+  height: 100%;
+  margin-bottom: 200rpx;
 }
 
 .title {
@@ -7,17 +9,17 @@
   font-size: 46rpx;
   font-family: Roboto;
   font-weight: 500;
-  margin-left: 280rpx;
+  margin-left: 285rpx;
 }
 
 .title-1 {
   font-size: 26rpx;
-  margin-left: 234rpx;
+  margin-left: 242rpx;
   margin-top: 10rpx;
 }
 
 .uploader {
-  margin-left: 284rpx;
+  margin-left: 286rpx;
   margin-top: 40rpx;
   margin-bottom: 20rpx;
 }
@@ -27,7 +29,7 @@
 }
 
 .createBtn {
-  width: 360rpx;
+  width: 300rpx;
   height: 100rpx;
   line-height: 100rpx;
   background-color:  #7cbe45;
