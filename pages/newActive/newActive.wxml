@@ -1,19 +1,21 @@
 <view class="page">
   <view class="title">发布活动</view>
   <view class="uploader">
-    <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" />
+    <van-uploader file-list="{{ fileList }}" deletable="{{ true }}" />
   </view>
   <view class="title-1">（点击上传活动图片）</view>
   <view class="field">
-    <van-field label="活动名称" value="{{ value }}" placeholder="请输入活动名称" bind:change="onChange" />
+    <van-field label="活动名称" value="{{ name }}" placeholder="请输入活动名称" bind:change="onChange" />
+    <van-field label="活动地点" value="{{ place }}" placeholder="请输入活动地点" bind:change="onChange" />
     <van-cell title="活动时间" is-link bind:click="showPopup" />
     <van-popup show="{{ show }}" bind:close="onClose" position="bottom" custom-style="height: 50%">
       <van-datetime-picker type="date" value="{{ currentDate }}" bind:input="onInput" min-date="{{ minDate }}"
         formatter="{{ formatter }}" bind:confirm="onConfirm" bind:cancel="onCancel" />
     </van-popup>
-    <van-field label="活动人数" value="{{ value }}" placeholder="请输入活动人数" bind:change="onChange" />
-    <van-field label="二课分值" value="{{ value }}" placeholder="请输入二课分值" bind:change="onChange" />
-    <van-field type="textarea" placeholder="请输入活动简介/内容" autosize=" { maxHeight: 100, minHeight: 50 }" />
+    <van-field label="活动人数" value="{{ number }}" placeholder="请输入活动人数" bind:change="onChange" />
+    <van-field label="二课分值" value="{{ ebranch }}" placeholder="请输入二课分值" bind:change="onChange" />
+    <van-field type="textarea" value="{{ remark }}" placeholder="请输入活动简介/内容"
+      autosize=" { maxHeight: 100, minHeight: 50 }" />
   </view>
-  <button class="createBtn">创建活动</button>
+  <button class="createBtn" bindtap="createAct">创建活动</button>
 </view>

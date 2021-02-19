@@ -25,6 +25,10 @@
         "text": "首页"
       },
       {
+        "pagePath": "pages/newActive/newActive",
+        "text": "新增活动"
+      },
+      {
         "pagePath": "pages/me/me",
         "text": "我的"
       }
