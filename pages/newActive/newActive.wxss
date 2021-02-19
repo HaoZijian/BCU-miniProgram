@@ -1,0 +1,43 @@
+.page {
+  margin-top: 10rpx;
+}
+
+.title {
+  text-align: left;
+  font-size: 46rpx;
+  font-family: Roboto;
+  font-weight: 500;
+  margin-left: 280rpx;
+}
+
+.title-1 {
+  font-size: 26rpx;
+  margin-left: 234rpx;
+  margin-top: 10rpx;
+}
+
+.uploader {
+  margin-left: 284rpx;
+  margin-top: 40rpx;
+  margin-bottom: 20rpx;
+}
+
+.field {
+  margin-top: 20rpx;
+}
+
+.createBtn {
+  width: 360rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color:  #7cbe45;
+  box-shadow: 0rpx 20rpx 60rpx rgba(0, 0, 0, 0.2);
+  border-radius: 14rpx;
+  font-size: 32rpx;
+  font-family: Roboto;
+  font-weight: 500;
+  color: #ffffff;
+  margin-top: 50rpx;
+}
+
+

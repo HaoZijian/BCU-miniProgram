@@ -6,7 +6,7 @@
     "pages/detail/detail",
     "pages/myActive/myActive",
     "pages/verifyList/verifyList",
-    "pages/signInList/signInList"
+    "pages/newActive/newActive"
   ],
   "window": {
     "backgroundTextStyle": "light",

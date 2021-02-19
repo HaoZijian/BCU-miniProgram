@@ -19,8 +19,9 @@
           "scene": null
         },
         {
-          "name": "pages/signInList/signInList",
-          "pathName": "pages/signInList/signInList",
+          "name": "pages/newActive/newActive",
+          "pathName": "pages/newActive/newActive",
+          "query": "",
           "scene": null
         }
       ]
