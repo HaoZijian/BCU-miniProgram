@@ -2,25 +2,40 @@ Component({
   data: {
     active: 0,
     list: [{
+        "id": 0,
         "url": "/pages/index/index",
         "icon": "wap-home-o",
-        "text": "首页"
+        "text": "首页",
+        "type": 1
       },
       {
+        "id":1,
         "icon": "scan",
         "text": "扫码签到",
-        "flag": 1
+        "flag": 1,
+        "type": 1
       },
       {
+        "id":2,
+        "icon": "plus",
+        "text": "新增活动",
+        "flag": 2,
+        "type": 2
+      },
+      {
+        "id":3,
         "url": "/pages/me/me",
         "icon": "user-circle-o",
-        "text": "我的"
+        "text": "我的",
+        "type": 1
       }
     ],
-    aid: null
+    aid: null,
+    type: wx.getStorageSync('type')
   },
   methods: {
     onChange(e) {
+      console.log(e)
       this.setData({
         active: e.detail
       });

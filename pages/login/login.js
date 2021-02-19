@@ -4,8 +4,8 @@ Page({
    * Page initial data
    */
   data: {
-    username:'',
-    password:'',
+    username: '',
+    password: '',
     show: false,
     columns: ['未选择', '学生', '教师'],
     value1: '未选择',
@@ -32,11 +32,11 @@ Page({
       value1: event.detail.value,
       index: event.detail.index
     })
-    if(this.data.index == 1) {
+    if (this.data.index == 1) {
       that.setData({
         logintype: 1
       })
-    }else if(this.data.index == 2) {
+    } else if (this.data.index == 2) {
       that.setData({
         logintype: 2
       })
@@ -55,47 +55,51 @@ Page({
       header: {
         'content-Type': 'application/x-www-form-urlencoded'
       },
-      success:res => {
-        console.log(res.data.data)
-        wx.setStorage({
-          data: res.data.data.number,
-          key: 'number',
-        })
-        wx.setStorage({
-          data: res.data.data.sname,
-          key: 'name',
-        })
-        wx.setStorage({
-          data: res.data.data.head_img,
-          key: 'img',
-        })
-        wx.setStorage({
-          data: res.data.data.ministry,
-          key: 'xuebu',
-        })
-        wx.setStorage({
-          data: res.data.data.class,
-          key: 'class',
-        })
-        wx.setStorage({
-          data: res.data.data.token,
-          key: 'token',
-        })
-        wx.setStorage({
-          data: res.data.data.ebranch,
-          key: 'ebranch',
-        })
+      success: res => {
+        if (res.data.code == 0) {
+          console.log(res.data.data)
+          wx.setStorage({
+            data: res.data.data.number,
+            key: 'number',
+          })
+          wx.setStorage({
+            data: res.data.data.sname,
+            key: 'name',
+          })
+          wx.setStorage({
+            data: res.data.data.head_img,
+            key: 'img',
+          })
+          wx.setStorage({
+            data: res.data.data.ministry,
+            key: 'xuebu',
+          })
+          wx.setStorage({
+            data: res.data.data.class,
+            key: 'class',
+          })
+          wx.setStorage({
+            data: res.data.data.token,
+            key: 'token',
+          })
+          wx.setStorage({
+            data: res.data.data.ebranch,
+            key: 'ebranch',
+          })
+          wx.setStorage({
+            data: this.data.logintype,
+            key: 'type',
+          })
 
-        if(res.data.code == 0) {
           wx.navigateBack({
             delta: 0,
           })
-        }else if(res.data.code == 1) {
+        } else if (res.data.code == 1) {
           wx.showToast({
             title: '用户名、密码或选择身份错误！',
             icon: 'none'
           })
-        }else if(res.data.code == 2) {
+        } else if (res.data.code == 2) {
           wx.showToast({
             title: '请填写用户名密码并选择您的使用身份！',
             icon: 'none'
