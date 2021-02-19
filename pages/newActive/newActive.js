@@ -1,6 +1,5 @@
 // pages/newActive/newActive.js
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -27,28 +26,25 @@ Page({
     number: '',
     ebranch: '',
     remark: '',
-    faqiren: wx.getStorage({
-      key: 'name',
-    }),
-    token: wx.getStorage({
-      key: 'token',
-    }),
+    faqiren: wx.getStorageSync('number'),
+    token: wx.getStorageSync('token'),
   },
-
+  
   createAct() {
+    let self=this
     wx.request({
       url: 'https://bcuscm.mauac.com/applets/api.Activity/activityadd',
       method: 'POST',
       data: {
-        aname: this.data.name,
-        atime: this.data.time,
-        aplace: this.data.place,
-        anumber: this.data.number,
-        aebranch: this.data.ebranch,
-        aimg: this.data.fileList,
-        remark: this.data.remark,
-        faqiren: this.data.faqiren,
-        token: this.data.token
+        aname: self.data.name,
+        atime: self.data.time,
+        aplace: self.data.place,
+        anumber: self.data.number,
+        aebranch: self.data.ebranch,
+        aimg: self.data.fileList,
+        remark: self.data.remark,
+        faqiren: self.data.faqiren,
+        token: self.data.token
       },
       header: {
         'content-Type': 'application/x-www-form-urlencoded'
