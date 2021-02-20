@@ -4,15 +4,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    fileList: [{
-      url: '',
-      name: '图片2',
-      isImage: true,
-      deletable: true,
-    }, ],
+    fileList: [],
     show: false,
     currentDate: new Date().getTime(),
-    minDate: new Date().getTime(),
     formatter(type, value) {
       if (type === 'year') {
         return `${value}年`;
@@ -29,19 +23,74 @@ Page({
     faqiren: wx.getStorageSync('number'),
     token: wx.getStorageSync('token'),
   },
-  
+
+  afterRead(event) {
+    let that = this;
+    const {
+      file
+    } = event.detail;
+    console.log(file)
+    wx.uploadFile({
+      url: 'https://bcuscm.mauac.com//applets/api.Upload/upload', 
+      filePath: file.url,
+      name: 'img',
+      header: {
+        'Content-Type': 'multipart/form-data'
+      },
+      success(res) {
+        console.log(res)
+        const {
+          fileList = []
+        } = that.data;
+        fileList.push({
+          ...file,
+          url: res.data
+        });
+        that.setData({
+          fileList
+        });
+      },
+    });
+  },
+
+
+  // onClickImage: function (e) {
+  //   let that = this;
+  //   wx.chooseImage({
+  //     count: 1,
+  //     sizeType: ['original', 'compressed'],
+  //     sourceType: ['album', 'camera'],
+  //     success(res) {
+  //       console.log(res)
+  //       const tempFilePaths = res.tempFilePaths
+  //       wx.getFileInfo({
+  //         filePath: tempFilePaths[0],
+  //         success(res) {
+  //           console.log(res)
+  //         }
+  //       })
+  //     }
+  //   })
+  // },
+
+  onInput(event) {
+    this.setData({
+      currentDate: event.detail,
+    });
+  },
+
   createAct() {
-    let self=this
+    let self = this;
     wx.request({
       url: 'https://bcuscm.mauac.com/applets/api.Activity/activityadd',
       method: 'POST',
       data: {
         aname: self.data.name,
-        atime: self.data.time,
+        atime: self.data.currentDate,
         aplace: self.data.place,
         anumber: self.data.number,
         aebranch: self.data.ebranch,
-        aimg: self.data.fileList,
+        aimg: self.data.fileList[0],
         remark: self.data.remark,
         faqiren: self.data.faqiren,
         token: self.data.token
@@ -123,11 +172,7 @@ Page({
     });
   },
 
-  onInput(event) {
-    this.setData({
-      currentDate: event.detail,
-    });
-  },
+
 
   showPopup() {
     this.setData({

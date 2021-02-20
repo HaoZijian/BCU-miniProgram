@@ -1,7 +1,7 @@
 <view class="page">
   <view class="title">发布活动</view>
   <view class="uploader">
-    <van-uploader file-list="{{ fileList }}" deletable="{{ true }}" />
+    <van-uploader file-list="{{ fileList }}" deletable="{{ true }}"  bind:after-read="afterRead"/>
   </view>
   <view class="title-1">（点击上传活动图片）</view>
   <view class="field">
@@ -9,8 +9,8 @@
     <van-field label="活动地点" model:value="{{ place }}" placeholder="请输入活动地点" bind:change="onChange" />
     <van-cell title="活动时间" is-link bind:click="showPopup" />
     <van-popup show="{{ show }}" bind:close="onClose" position="bottom" custom-style="height: 50%">
-      <van-datetime-picker type="date" model:value="{{ currentDate }}" bind:input="onInput" min-date="{{ minDate }}"
-        formatter="{{ formatter }}" bind:confirm="onConfirm" bind:cancel="onCancel" />
+      <van-datetime-picker type="datetime" model:value="{{ currentDate }}" bind:input="onInput" bind:confirm="onConfirm"
+        formatter="{{ formatter }}" bind:cancel="onCancel" />
     </van-popup>
     <van-field label="活动人数" model:value="{{ number }}" placeholder="请输入活动人数" bind:change="onChange" />
     <van-field label="二课分值" model:value="{{ ebranch }}" placeholder="请输入二课分值" bind:change="onChange" />
