@@ -1,0 +1,14 @@
+<view class="page">
+  <view class="title">证书提交</view>
+  <view class="uploader">
+    <van-uploader file-list="{{ fileList }}" deletable="{{ true }}" bind:after-read="afterRead" />
+  </view>
+  <view class="title-1">（点击上传活动图片）</view>
+  <view class="field">
+    <van-field label="证书名称" model:value="{{ name }}" placeholder="请输入名称" bind:change="onChange" />
+    <van-field type="textarea" model:value="{{ remark }}" placeholder="请输入证书/竞赛 说明"
+      autosize=" { maxHeight: 100, minHeight: 50 }" />
+  </view>
+  <button class="createBtn">提交</button>
+  <button class="certificateList" bindtap="toCertificateList">我的证书</button>
+</view>

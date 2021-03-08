@@ -18,7 +18,7 @@ Page({
     }else{
       wx.setStorageSync('currentActivity', res.currentTarget.dataset.index)
       wx.navigateTo({
-        url: '/pages/verifyList/verifyList',
+        url: '/pages/detail/detail',
       })
     }
 

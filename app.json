@@ -6,7 +6,9 @@
     "pages/detail/detail",
     "pages/myActive/myActive",
     "pages/verifyList/verifyList",
-    "pages/newActive/newActive"
+    "pages/newActive/newActive",
+    "pages/myCertificate/myCertificate",
+    "pages/certificateList/certificateList"
   ],
   "window": {
     "backgroundTextStyle": "light",

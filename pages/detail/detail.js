@@ -5,13 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    detail:[]
+    detail:[],
+    type: ''
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var that = this;
+    that.setData({
+      type: wx.getStorageSync('type')
+    })
     wx.request({
       url: 'https://bcuscm.mauac.com/applets/api.Activity/activityinfo',
       method: 'POST',
@@ -116,5 +120,11 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  toVerifyList() {
+    wx.navigateTo({
+      url: '/pages/verifyList/verifyList',
+    })
   }
 })

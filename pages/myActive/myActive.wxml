@@ -11,7 +11,6 @@
             <view class="text">名称：{{item.aname}}</view>
             <view class="text">日期：{{item.atime}}</view>
             <view class="text">地点：{{item.aplace}}</view>
-            <!-- <view class="text">申请人：{{ name }}</view> -->
           </van-col>
         </view>
       </van-row>

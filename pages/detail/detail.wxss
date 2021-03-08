@@ -1,5 +1,5 @@
 .top {
-  margin-top: 30rpx;
+  margin-top: 10rpx;
 }
 
 .act-name {
@@ -17,7 +17,7 @@
   height: 320rpx;
   box-shadow: 0rpx 20rpx 60rpx rgba(0, 0, 0, 0.1);
   margin-left: 172rpx;
-  margin-top: 50rpx;
+  margin-top: 40rpx;
 }
 
 .act-creator {
@@ -49,4 +49,18 @@
   font-weight: 500;
   color: #ffffff;
   margin-top: 50rpx;
+}
+
+.Btn {
+  width: 280rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  background-color: #7cbe45;
+  box-shadow: 0rpx 20rpx 60rpx rgba(0, 0, 0, 0.2);
+  border-radius: 14rpx;
+  font-size: 32rpx;
+  font-family: Roboto;
+  font-weight: 500;
+  color: #ffffff;
+  margin-top: 40rpx;
 }

@@ -31,7 +31,7 @@ Page({
     } = event.detail;
     console.log(file)
     wx.uploadFile({
-      url: 'https://bcuscm.mauac.com//applets/api.Upload/upload', 
+      url: 'https://bcuscm.mauac.com/applets/api.Upload/upload', 
       filePath: file.url,
       name: 'img',
       header: {
@@ -113,6 +113,7 @@ Page({
 
   /**
    * 生命周期函数--监听页面初次渲染完成
+   * 
    */
   onReady: function () {
 
@@ -171,8 +172,6 @@ Page({
       show: false
     });
   },
-
-
 
   showPopup() {
     this.setData({

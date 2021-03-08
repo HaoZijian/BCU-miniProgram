@@ -1,8 +1,8 @@
 <!--pages/detail/detail.wxml-->
-<view class="page"> 
+<view class="page">
   <van-notify id="van-notify" />
   <view class="top">
-    <view  class="act-name">{{detail.aname}}</view>
+    <view class="act-name">{{detail.aname}}</view>
   </view>
   <!-- <view class="act-creator">发起人：XXX</view> -->
   <image src="{{detail.aimg}}" class="act-img"></image>
@@ -13,6 +13,14 @@
     <view class="text">二课分分值：{{detail.aebranch}}</view>
     <view class="text">报名人数：{{detail.bmcount}}/{{detail.anumber}}</view>
   </view>
-  <button wx:if="{{detail.issign}}" class="signUpBtn" bindtap="sign">取消报名</button>
-  <button wx:else class="signUpBtn" bindtap="sign">立即报名</button>
+  
+  <view wx:if="{{type == 1}}" class="stu-btn">
+    <button wx:if="{{detail.issign}}" class="signUpBtn" bindtap="sign">取消报名</button>
+    <button wx:else class="signUpBtn" bindtap="sign">立即报名</button>
+  </view>
+  <view wx:if="{{type == 2}}" class="tea-btn">
+    <button class="Btn">修改信息</button>
+    <button class="Btn">删除活动</button>
+    <button class="Btn" bindtap="toVerifyList">审核活动</button>
+  </view>
 </view>

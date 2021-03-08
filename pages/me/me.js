@@ -13,6 +13,12 @@ Page({
     ebranch: wx.getStorageSync('ebranch')
   },
 
+  toMyCertificate() {
+    wx.navigateTo({
+      url: '/pages/myCertificate/myCertificate',
+    })
+  },
+
   toMyActive() {
     wx.navigateTo({
       url: '/pages/myActive/myActive',
