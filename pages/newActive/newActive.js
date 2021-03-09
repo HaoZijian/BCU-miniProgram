@@ -10,11 +10,8 @@ Page({
     number: '',
     ebranch: '',
     remark: '',
-    faqiren: wx.getStorageSync('number'),
-    token: wx.getStorageSync('token'),
+    img: ''
   },
-
-
 
   /**
    * 生命周期函数--监听页面加载
@@ -208,7 +205,8 @@ Component({
           'Content-Type': 'multipart/form-data'
         },
         success(res) {
-          console.log(res)
+          res.data=JSON.parse(res.data)
+          console.log(res.data.data)
           const {
             fileList = []
           } = that.data;
@@ -217,7 +215,8 @@ Component({
             url: res.data
           });
           that.setData({
-            fileList
+            fileList,
+            img: res.data.data
           })
         }
       })
@@ -239,10 +238,10 @@ Component({
           aplace: self.data.place,
           anumber: self.data.number,
           aebranch: self.data.ebranch,
-          aimg: self.data.fileList[0],
+          aimg: self.data.img,
           remark: self.data.remark,
-          faqiren: self.data.faqiren,
-          token: self.data.token
+          faqiren: wx.getStorageSync('number'),
+          token: wx.getStorageSync('token')
         },
         header: {
           'content-Type': 'application/x-www-form-urlencoded'
