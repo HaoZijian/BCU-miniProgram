@@ -58,38 +58,14 @@ Page({
       success: res => {
         if (res.data.code == 0) {
           console.log(res.data.data)
-          wx.setStorage({
-            data: res.data.data.username,
-            key: 'number',
-          })
-          wx.setStorage({
-            data: res.data.data.sname||res.data.data.tname,
-            key: 'name',
-          })
-          wx.setStorage({
-            data: res.data.data.head_img,
-            key: 'img',
-          })
-          wx.setStorage({
-            data: res.data.data.ministry,
-            key: 'xuebu',
-          })
-          wx.setStorage({
-            data: res.data.data.class,
-            key: 'class',
-          })
-          wx.setStorage({
-            data: res.data.data.token,
-            key: 'token',
-          })
-          wx.setStorage({
-            data: res.data.data.ebranch,
-            key: 'ebranch',
-          })
-          wx.setStorage({
-            data: this.data.logintype,
-            key: 'type',
-          })
+          wx.setStorageSync('number', res.data.data.username)
+          wx.setStorageSync('img', res.data.data.head_img)
+          wx.setStorageSync('name', res.data.data.sname||res.data.data.tname)
+          wx.setStorageSync('xuebu', res.data.data.ministry)
+          wx.setStorageSync('class', res.data.data.class)
+          wx.setStorageSync('token', res.data.data.token)
+          wx.setStorageSync('ebranch', res.data.data.ebranch)
+          wx.setStorageSync('type', this.data.logintype)
 
           wx.navigateBack({
             delta: 0,
