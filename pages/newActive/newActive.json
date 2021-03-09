@@ -1,4 +1,5 @@
 {
+  "component": true,
   "usingComponents": {
     "van-field": "/@vant/weapp/dist/field/index",
     "van-card": "/@vant/weapp/dist/card/index",
