@@ -1,4 +1,5 @@
 // pages/newActive/newActive.js
+import Notify from '../../@vant/weapp/dist/notify/notify';
 Page({
   /**
    * 页面的初始数据
@@ -10,7 +11,7 @@ Page({
     number: '',
     ebranch: '',
     remark: '',
-    img: ''
+    img: '',
   },
 
   /**
@@ -205,7 +206,7 @@ Component({
           'Content-Type': 'multipart/form-data'
         },
         success(res) {
-          res.data=JSON.parse(res.data)
+          res.data = JSON.parse(res.data)
           console.log(res.data.data)
           const {
             fileList = []
@@ -220,11 +221,6 @@ Component({
           })
         }
       })
-    },
-
-    onChange(event) {
-      // event.detail 为当前输入的值
-      console.log(event.detail);
     },
 
     createAct() {
@@ -247,7 +243,21 @@ Component({
           'content-Type': 'application/x-www-form-urlencoded'
         },
         success: res => {
-          console.log(res)
+          console.log(res.statusCode)
+          switch (res.statusCode) {
+            case 200:
+              Notify({
+                type: 'success',
+                message: '创建活动成功'
+              });
+              break;
+            default:
+              Notify({
+                type: 'danger',
+                message: '创建活动失败'
+              });
+              break;
+          }
         }
       })
     },

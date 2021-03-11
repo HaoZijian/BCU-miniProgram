@@ -1,6 +1,7 @@
 <!--pages/detail/detail.wxml-->
 <view class="page">
   <van-notify id="van-notify" />
+  <van-toast id="custom-selector" />
   <view class="top">
     <view class="act-name">{{detail.aname}}</view>
   </view>
