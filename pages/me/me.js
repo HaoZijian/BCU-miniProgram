@@ -1,4 +1,5 @@
 // pages/me/me.js
+import Notify from '../../@vant/weapp/dist/notify/notify';
 Page({
   /**
    * Page initial data
@@ -10,7 +11,8 @@ Page({
     xuebu: '',
     class: '',
     canShow: true,
-    ebranch: wx.getStorageSync('ebranch')
+    ebranch: wx.getStorageSync('ebranch'),
+    logintype: wx.getStorageSync('type')
   },
 
   toMyCertificate() {
@@ -31,11 +33,15 @@ Page({
     })
   },
 
+  judge() {
+    
+  },
+
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    
+
   },
 
   /**

@@ -5,14 +5,30 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    list: [],
+    name: wx.getStorageSync('name')
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.request({
+      url: 'https://bcuscm.mauac.com/applets/api.Activity/signList',
+      method: 'POST',
+      data: {
+        logintype: wx.getStorageSync('type'),
+        uname: wx.getStorageSync('number')
+      },
+      header: {
+        'content-Type': 'application/x-www-form-urlencoded'
+      },
+      success: res => {
+        this.setData({
+          list: res.data.data
+        })
+      },
+    })
   },
 
   /**

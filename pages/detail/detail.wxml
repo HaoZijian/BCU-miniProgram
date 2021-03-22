@@ -19,7 +19,6 @@
     <button wx:else class="signUpBtn" bindtap="sign">立即报名</button>
   </view>
   <view wx:if="{{type == 2}}" class="tea-btn">
-    <button class="Btn">修改信息</button>
     <button class="Btn">删除活动</button>
     <button class="Btn" bindtap="toVerifyList">审核活动</button>
   </view>

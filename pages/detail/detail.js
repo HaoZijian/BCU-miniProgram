@@ -5,41 +5,44 @@ Page({
    * 页面的初始数据
    */
   data: {
-    detail:[],
-    type: ''
+    detail: [],
+    type: '',
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let time = require('../../utils/time')
     var that = this;
     that.setData({
-      type: wx.getStorageSync('type')
-    })
-    wx.request({
-      url: 'https://bcuscm.mauac.com/applets/api.Activity/activityinfo',
-      method: 'POST',
-      data: {
-        aid: wx.getStorageSync('currentActivity'),
-        logintype: 2,
-        uname: wx.getStorageSync('number')
-      },
-      header: {
-        'content-Type': 'application/x-www-form-urlencoded'
-      },
-      success: res => {
-        console.log(res.data.data)
-        that.setData({
-          detail:res.data.data
-        })
-      },
-      fail: error => {
-        console.log(error);
-      }
-    })
+        type: wx.getStorageSync('type')
+      }),
+      wx.request({
+        url: 'https://bcuscm.mauac.com/applets/api.Activity/activityinfo',
+        method: 'POST',
+        data: {
+          aid: wx.getStorageSync('currentActivity'),
+          logintype: 2,
+          uname: wx.getStorageSync('number')
+        },
+        header: {
+          'content-Type': 'application/x-www-form-urlencoded'
+        },
+        success: res => {
+          let newTime = res.data.data.atime / 1000;
+          res.data.data.atime = time.formatTimeTwo(newTime,'Y年M月D日 h:m');
+          that.setData({
+            detail: res.data.data
+          })
+        },
+        fail: error => {
+          console.log(error);
+        }
+      })
   },
   sign() {
-    var that=this
+    var that = this
     wx.request({
       url: 'https://bcuscm.mauac.com/applets/api.Activity/activityStudentSign',
       method: 'POST',
@@ -53,19 +56,31 @@ Page({
         'content-Type': 'application/x-www-form-urlencoded'
       },
       success: res => {
-        switch (res.data.code){
+        switch (res.data.code) {
           case 0:
             that.setData({
-              "detail.issign":1
+              "detail.issign": 1
             })
-            Notify({ type: 'success', message: '报名成功' });break;
+            Notify({
+              type: 'success',
+              message: '报名成功'
+            });
+            break;
           case 1:
             that.setData({
-              "detail.issign":0
+              "detail.issign": 0
             })
-            Notify({ type: 'warning', message: '取消报名' });break;
+            Notify({
+              type: 'warning',
+              message: '取消报名'
+            });
+            break;
           default:
-            Notify({ type: 'danger', message: '请求失败' });break;
+            Notify({
+              type: 'danger',
+              message: '请求失败'
+            });
+            break;
         }
       },
       fail: error => {
