@@ -1,5 +1,6 @@
 <!--pages/verifyList/verifyList.wxml-->
 <view class="page">
+  <van-notify id="van-notify" />
   <view class="title">加分审核</view>
   <view class="option-item">
     <view class="options" wx:for-items="{{list}}" wx:key="index" data-index="{{item.id}}">

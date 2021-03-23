@@ -1,20 +1,42 @@
 // pages/verifyList/verifyList.js
+import Notify from '../../@vant/weapp/dist/notify/notify';
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
     list: [],
-    name: wx.getStorageSync('name')
+    name: wx.getStorageSync('name'),
+    flag: ''
   },
-  pass(e){
-    this.verify(1,e.currentTarget.dataset.index,e.currentTarget.dataset.num)
+
+  pass(e) {
+    this.verify(1, e.currentTarget.dataset.index, e.currentTarget.dataset.num)
+    this.setData({
+      flag: 1
+    })
+    if(this.data.flag == 1) {
+      Notify({
+        type: 'success',
+        message: '已通过审核，加分成功！',
+      });
+    }
   },
-  refuse(e){
-    this.verify(0,e.currentTarget.dataset.index,e.currentTarget.dataset.num)
+
+  refuse(e) {
+    this.verify(0, e.currentTarget.dataset.index, e.currentTarget.dataset.num)
+    this.setData({
+      flag: 2
+    })
+    if(this.data.flag == 2) {
+      Notify({
+        type: 'success',
+        message: '已通过审核，加分成功！',
+      });
+    }
   },
-  verify(pass,uname,index) {
+
+  verify(pass, uname, index) {
     wx.request({
       url: 'https://bcuscm.mauac.com/applets/api.Activity/audit',
       method: 'POST',
@@ -27,10 +49,10 @@ Page({
       header: {
         'content-Type': 'application/x-www-form-urlencoded'
       },
-      success:res => {
+      success: res => {
         console.log(index)
-        let list=this.data.list
-        list.splice(index,1)
+        let list = this.data.list
+        list.splice(index, 1)
         this.setData({
           list
         })
@@ -54,7 +76,7 @@ Page({
       },
       success: res => {
         this.setData({
-          list:res.data.data
+          list: res.data.data
         })
       },
     })
