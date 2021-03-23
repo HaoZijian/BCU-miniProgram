@@ -21,5 +21,6 @@
   <view wx:if="{{type == 2}}" class="tea-btn">
     <button class="Btn" bindtap="delete">删除活动</button>
     <button class="Btn" bindtap="toVerifyList">审核活动</button>
+    <button class="Btn">活动二维码</button>
   </view>
 </view>

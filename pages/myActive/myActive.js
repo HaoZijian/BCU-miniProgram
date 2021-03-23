@@ -5,17 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list:[],
-    name:wx.getStorageSync('name')
+    list: [],
+    name: wx.getStorageSync('name')
   },
 
   toDetailPage(res) {
-    if(wx.getStorageSync('type')==1){
+    if (wx.getStorageSync('type') == 1) {
       wx.setStorageSync('currentActivity', res.currentTarget.dataset.index)
       wx.navigateTo({
         url: '/pages/detail/detail',
       })
-    }else{
+    } else {
       wx.setStorageSync('currentActivity', res.currentTarget.dataset.index)
       wx.navigateTo({
         url: '/pages/detail/detail',
@@ -26,20 +26,32 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  formate(res) {
+    let time = require('../../utils/time')
+    for (let i = 0; i < res.data.data.length; i++) {
+      let newTime = res.data.data[i].atime / 1000;
+      res.data.data[i].atime = time.formatTimeTwo(newTime, 'Y年M月D日 h:m');
+    }
+    return res;
+  },
+
+
+
   onLoad: function (options) {
     wx.request({
       url: 'https://bcuscm.mauac.com/applets/api.Activity/signList',
       method: 'POST',
       data: {
-        logintype:wx.getStorageSync('type'),
-        uname:wx.getStorageSync('number')
+        logintype: wx.getStorageSync('type'),
+        uname: wx.getStorageSync('number')
       },
       header: {
         'content-Type': 'application/x-www-form-urlencoded'
       },
-      success: res =>{
+      success: res => {
+        res = this.formate(res)
         this.setData({
-          list:res.data.data
+          list: res.data.data
         })
       },
     })
