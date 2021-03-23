@@ -16,8 +16,8 @@
         </view>
         <view class="btn-area">
           <van-col span="8">
-            <button class="btn">通过</button>
-            <button class="btn1">不通过</button>
+            <button class="btn" bindtap="verify">通过</button>
+            <button class="btn1" bindtap="verify">不通过</button>
           </van-col>
         </view>
 

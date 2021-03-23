@@ -9,23 +9,43 @@ Page({
     name: wx.getStorageSync('name')
   },
 
+  verify() {
+    wx.request({
+      url: 'https://bcuscm.mauac.com/applets/api.Activity/audit',
+      method: 'POST',
+      data: {
+        uname: this.data.name,
+        token: wx.getStorageSync('token'),
+        aid: wx.getStorageSync('currentActivity'),
+        pass: '',
+      },
+      header: {
+        'content-Type': 'application/x-www-form-urlencoded'
+      },
+      success:res => {
+        console.log(res)
+      }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     wx.request({
-      url: 'https://bcuscm.mauac.com/applets/api.Activity/signList',
+      url: 'https://bcuscm.mauac.com/applets/api.Activity/auditList',
       method: 'POST',
       data: {
-        logintype: wx.getStorageSync('type'),
-        uname: wx.getStorageSync('number')
+        token: wx.getStorageSync('token'),
+        aid: wx.getStorageSync('currentActivity'),
       },
       header: {
         'content-Type': 'application/x-www-form-urlencoded'
       },
       success: res => {
+        console.log(res)
         this.setData({
-          list: res.data.data
+          
         })
       },
     })
