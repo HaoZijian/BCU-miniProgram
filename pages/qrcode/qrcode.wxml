@@ -1,0 +1,4 @@
+<!--pages/qrcode/qrcode.wxml-->
+<view class="qrcode">
+  <canvas class="canvas-code" canvas-id="myQrcode" style="background:#fff;width: 260px;height: 260px;" />
+</view>

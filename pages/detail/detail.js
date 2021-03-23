@@ -121,6 +121,8 @@ Page({
       }
     })
   },
+
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -174,5 +176,11 @@ Page({
     wx.navigateTo({
       url: '/pages/verifyList/verifyList',
     })
-  }
+  },
+
+  QRcode() {
+    wx.navigateTo({
+      url: '/pages/qrcode/qrcode',
+    })
+  },
 })

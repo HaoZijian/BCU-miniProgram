@@ -8,7 +8,8 @@
     "pages/verifyList/verifyList",
     "pages/newActive/newActive",
     "pages/myCertificate/myCertificate",
-    "pages/certificateList/certificateList"
+    "pages/certificateList/certificateList",
+    "pages/qrcode/qrcode"
   ],
   "window": {
     "backgroundTextStyle": "light",

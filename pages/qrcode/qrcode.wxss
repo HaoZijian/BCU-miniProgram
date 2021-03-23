@@ -1,0 +1,4 @@
+.qrcode {
+  margin-top: 260rpx;
+  margin-left: 120rpx;
+}
