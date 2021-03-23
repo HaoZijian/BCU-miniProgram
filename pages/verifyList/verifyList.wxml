@@ -2,22 +2,21 @@
 <view class="page">
   <view class="title">加分审核</view>
   <view class="option-item">
-    <view class="options" wx:for-items="{{list}}" wx:key="id" data-index="{{item.id}}">
+    <view class="options" wx:for-items="{{list}}" wx:key="index" data-index="{{item.id}}">
       <van-row>
         <van-col span="8">
-          <image class="img" src="{{item.aimg}}"></image>
+          <image class="img" src="{{item.head_img}}"></image>
         </van-col>
         <view class="text-area">
           <van-col span="8">
-            <view class="text">名称：{{item.aname}}</view>
-            <view class="text">日期：{{item.time}}</view>
-            <view class="text">地点：{{item.aplace}}</view>
+            <view class="text">名称：{{item.sname}}</view>
+            <view class="text">学号：{{item.uname}}</view>
           </van-col>
         </view>
         <view class="btn-area">
           <van-col span="8">
-            <button class="btn" bindtap="verify">通过</button>
-            <button class="btn1" bindtap="verify">不通过</button>
+            <button class="btn" bindtap="pass" data-index="{{item.uname}}" data-num="{{index}}">通过</button>
+            <button class="btn1" bindtap="refuse" data-index="{{item.uname}}" data-num="{{index}}">不通过</button>
           </van-col>
         </view>
 

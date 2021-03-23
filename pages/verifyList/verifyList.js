@@ -8,22 +8,32 @@ Page({
     list: [],
     name: wx.getStorageSync('name')
   },
-
-  verify() {
+  pass(e){
+    this.verify(1,e.currentTarget.dataset.index,e.currentTarget.dataset.num)
+  },
+  refuse(e){
+    this.verify(0,e.currentTarget.dataset.index,e.currentTarget.dataset.num)
+  },
+  verify(pass,uname,index) {
     wx.request({
       url: 'https://bcuscm.mauac.com/applets/api.Activity/audit',
       method: 'POST',
       data: {
-        uname: this.data.name,
+        uname: uname,
         token: wx.getStorageSync('token'),
         aid: wx.getStorageSync('currentActivity'),
-        pass: '',
+        pass: pass,
       },
       header: {
         'content-Type': 'application/x-www-form-urlencoded'
       },
       success:res => {
-        console.log(res)
+        console.log(index)
+        let list=this.data.list
+        list.splice(index,1)
+        this.setData({
+          list
+        })
       }
     })
   },
@@ -43,9 +53,8 @@ Page({
         'content-Type': 'application/x-www-form-urlencoded'
       },
       success: res => {
-        console.log(res)
         this.setData({
-          
+          list:res.data.data
         })
       },
     })
