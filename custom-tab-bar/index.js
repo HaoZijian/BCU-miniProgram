@@ -10,7 +10,7 @@ Component({
         "type": 0
       },
       {
-        "id":1,
+        "id": 1,
         "icon": "scan",
         "text": "扫码签到",
         "flag": 1,
@@ -18,13 +18,13 @@ Component({
       },
       {
         "url": "/pages/newActive/newActive",
-        "id":2,
+        "id": 2,
         "icon": "plus",
         "text": "新增活动",
         "type": 2
       },
       {
-        "id":3,
+        "id": 3,
         "url": "/pages/me/me",
         "icon": "user-circle-o",
         "text": "我的",
@@ -52,7 +52,7 @@ Component({
             that.setData({
               aid: res.result
             })
-            if (that.data.aid != null) {
+            if (that.data.aid == 'bcu' + wx.getStorageSync('currentActivity')) {
               wx.showModal({
                 title: '提示',
                 content: '签到成功!'
