@@ -31,7 +31,7 @@ Page({
         },
         success: res => {
           let newTime = res.data.data.atime / 1000;
-          res.data.data.atime = time.formatTimeTwo(newTime,'Y年M月D日 h:m');
+          res.data.data.atime = time.formatTimeTwo(newTime, 'Y年M月D日 h:m');
           that.setData({
             detail: res.data.data
           })
@@ -85,6 +85,39 @@ Page({
       },
       fail: error => {
         console.log(error);
+      }
+    })
+  },
+  delete() {
+    wx.request({
+      url: 'https://bcuscm.mauac.com/applets/api.Activity/activityDel',
+      method: 'POST',
+      data: {
+        aid: wx.getStorageSync('currentActivity'),
+        faqiren: wx.getStorageSync('number'),
+        token: wx.getStorageSync('token')
+      },
+      header: {
+        'content-Type': 'application/x-www-form-urlencoded'
+      },
+      success: res => {
+        if (res.data.code == 1) {
+          Notify({
+            type: 'success',
+            message: '已删除'
+          });
+          setTimeout(() => {
+            wx.navigateBack({
+              delta: -1,
+            })
+          }, 1000);
+
+        } else {
+          Notify({
+            type: 'danger',
+            message: '未知错误'
+          });
+        }
       }
     })
   },

@@ -30,8 +30,8 @@ Page({
     })
     if(this.data.flag == 2) {
       Notify({
-        type: 'success',
-        message: '已通过审核，加分成功！',
+        type: 'warning',
+        message: '已拒绝！',
       });
     }
   },
