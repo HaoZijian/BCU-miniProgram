@@ -9,7 +9,9 @@
     "pages/newActive/newActive",
     "pages/myCertificate/myCertificate",
     "pages/certificateList/certificateList",
-    "pages/qrcode/qrcode"
+    "pages/qrcode/qrcode",
+    "pages/competition/competition",
+    "pages/competitionList/competitionList"
   ],
   "window": {
     "backgroundTextStyle": "light",

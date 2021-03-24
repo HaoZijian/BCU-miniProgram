@@ -42,7 +42,7 @@
   margin-top: 50rpx;
 }
 
-.certificateList {
+.competitionList {
   width: 300rpx;
   height: 100rpx;
   line-height: 100rpx;

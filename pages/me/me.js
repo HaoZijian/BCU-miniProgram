@@ -27,6 +27,12 @@ Page({
     })
   },
 
+  toCompetition() {
+    wx.navigateTo({
+      url: '/pages/competition/competition',
+    })
+  },
+
   toLoginPage() {
     wx.navigateTo({
       url: '/pages/login/login',
