@@ -10,8 +10,7 @@
     "pages/myCertificate/myCertificate",
     "pages/certificateList/certificateList",
     "pages/qrcode/qrcode",
-    "pages/competition/competition",
-    "pages/competitionList/competitionList"
+    "pages/verify-CertList/verify-CertList"
   ],
   "window": {
     "backgroundTextStyle": "light",

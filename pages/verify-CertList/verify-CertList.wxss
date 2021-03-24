@@ -36,6 +36,7 @@
   padding-top: 30rpx;
   padding-left: 20rpx;
   padding-right: 20rpx;
+  display: block;
 }
 
 .text-area {
@@ -44,18 +45,23 @@
   font-weight: 400;
   color: #757B7E;
   text-align: left;
-  padding-top: 30rpx;
+  padding-top: 56rpx;
+  display: block;
+}
+
+.btn-area {
+  display: block;
 }
 
 .text {
-  font-size: 28rpx;
-  width: 400rpx;
+  font-size: 26rpx;
+  line-height: 40rpx;
 }
 
 .btn {
   width: 160rpx;
-  height: 60rpx;
-  line-height: 60rpx;
+  height: 50rpx;
+  line-height: 50rpx;
   background-color:  #7cbe45;
   box-shadow: 0rpx 20rpx 60rpx rgba(0, 0, 0, 0.2);
   border-radius: 8rpx;
@@ -64,14 +70,11 @@
   font-weight: 400;
   color: #ffffff;
 }
-.btn-area {
-  padding-top: 18rpx;
-}
 
 .btn1 {
   width: 160rpx;
-  height: 60rpx;
-  line-height: 60rpx;
+  height: 50rpx;
+  line-height: 50rpx;
   background-color:  #aab3be;
   box-shadow: 0rpx 20rpx 60rpx rgba(0, 0, 0, 0.2);
   border-radius: 4rpx;

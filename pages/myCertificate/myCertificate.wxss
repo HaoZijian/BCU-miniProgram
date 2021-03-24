@@ -9,7 +9,7 @@
   font-size: 46rpx;
   font-family: Roboto;
   font-weight: 500;
-  margin-left: 280rpx;
+  margin-left: 230rpx;
 }
 
 .title-1 {

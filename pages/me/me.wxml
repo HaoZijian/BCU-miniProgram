@@ -22,15 +22,8 @@
       <van-grid wx:else bindtap="judge">
         <van-grid-item icon="photo-o" text="我的活动" bindtap="toMyActive" />
         <van-grid-item icon="photo-o" text="我的证书" bindtap="toMyCertificate" />
-        <van-grid-item icon="photo-o" text="我的竞赛" bindtap="toCompetition"/>
-        <van-grid-item icon="photo-o" text="资料管理" />
-      </van-grid>
-      <view wx:if="{{canShow}}"></view>
-      <van-grid wx:else>
-        <van-grid-item icon="photo-o" text="消息" />
-        <van-grid-item icon="photo-o" text="公告" />
         <van-grid-item icon="photo-o" text="联系客服" />
-        <van-grid-item icon="photo-o" text="关于我们" />
+        <van-grid-item icon="photo-o" text="资料管理" />
       </van-grid>
     </view>
   </van-row>

@@ -16,20 +16,20 @@ Page({
   },
 
   toMyCertificate() {
+   if(wx.getStorageSync('type') == 1) {
     wx.navigateTo({
       url: '/pages/myCertificate/myCertificate',
     })
+   }else {
+     wx.navigateTo({
+       url: '/pages/verify-CertList/verify-CertList',
+     })
+   }
   },
 
   toMyActive() {
     wx.navigateTo({
       url: '/pages/myActive/myActive',
-    })
-  },
-
-  toCompetition() {
-    wx.navigateTo({
-      url: '/pages/competition/competition',
     })
   },
 

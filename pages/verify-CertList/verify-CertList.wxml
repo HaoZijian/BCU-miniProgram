@@ -1,0 +1,25 @@
+<view class="page">
+  <van-notify id="van-notify" />
+  <view class="title">证书与竞赛审核</view>
+  <view class="option-item">
+    <view class="options" wx:for-items="{{list}}" wx:key="index" data-index="{{item.id}}">
+      <van-row>
+        <van-col span="8">
+          <image class="img" src="{{item.head_img}}"></image>
+        </van-col>
+        <view class="text-area">
+          <van-col span="8">
+            <view class="text">名称：{{item.sname}}</view>
+            <view class="text">说明：{{item.uname}}</view>
+          </van-col>
+        </view>
+        <view class="btn-area">
+          <van-col span="8">
+            <button class="btn" data-index="{{item.uname}}" data-num="{{index}}">通过</button>
+            <button class="btn1" data-index="{{item.uname}}" data-num="{{index}}">不通过</button>
+          </van-col>
+        </view>
+      </van-row>
+    </view>
+  </view>
+</view>
