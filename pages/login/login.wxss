@@ -8,7 +8,10 @@
   font-family: Roboto;
   font-weight: 500;
   font-size: 60rpx;
-  text-align: center;
+}
+
+.text {
+  margin-left: 310rpx;
 }
 
 .loginBtn {

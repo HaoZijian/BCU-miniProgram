@@ -44,7 +44,7 @@
   font-weight: 400;
   color: #757B7E;
   text-align: left;
-  padding-top: 30rpx;
+  padding-top: 48rpx;
 }
 
 .text {
