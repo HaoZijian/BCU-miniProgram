@@ -52,12 +52,37 @@ Component({
             that.setData({
               aid: res.result
             })
-            if (that.data.aid == 'bcu' + wx.getStorageSync('currentActivity')) {
-              wx.showModal({
-                title: '提示',
-                content: '签到成功!'
-              })
-            }
+
+            wx.request({
+              url: 'https://bcuscm.mauac.com/applets/api.Activity/activitystudentqd',
+              method: 'POST',
+              data: {
+                aid: res.result,
+                uname: wx.getStorageSync('number'),
+                token: wx.getStorageSync('token')
+              },
+              header: {
+                'content-Type': 'application/x-www-form-urlencoded'
+              },
+              success: res => {
+                if (res.data.code == -6) {
+                  wx.showModal({
+                    title: '提示',
+                    content: '您未报名该活动'
+                  })
+                }else if(res.data.code == 0){
+                  wx.showModal({
+                    title: '提示',
+                    content: '签到成功！'
+                  })
+                }else{
+                  wx.showModal({
+                    title: '未知原因',
+                    content: '签到失败！'
+                  })
+                }
+              },
+            })
           },
           fail(res) {
             wx.showModal({

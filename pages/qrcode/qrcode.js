@@ -13,7 +13,7 @@ Page({
    */
   onLoad: function (options) {
     new QRCode('myQrcode', {
-      text: 'bcu' + wx.getStorageSync('currentActivity'),
+      text:  wx.getStorageSync('currentActivity')+'',
       width: 260,
       height: 260,
       padding: 12, // 生成二维码四周自动留边宽度，不传入默认为0
