@@ -1,6 +1,6 @@
 <view class="page">
   <view class="info">
-    <text>欢迎使用二课分管理系统</text>
+    <text>登录</text>
   </view>
   <van-cell-group>
     <van-field value="{{ username }}" label="用户名" placeholder="请输入您的学号" bind:change="changeUsername"/>

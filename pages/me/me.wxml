@@ -23,7 +23,7 @@
         <van-grid-item icon="photo-o" text="我的活动" bindtap="toMyActive" />
         <van-grid-item icon="photo-o" text="我的证书" bindtap="toMyCertificate" />
         <van-grid-item icon="photo-o" text="联系客服" />
-        <van-grid-item icon="photo-o" text="资料管理" />
+        <van-grid-item icon="photo-o" text="敬请期待" />
       </van-grid>
     </view>
   </van-row>

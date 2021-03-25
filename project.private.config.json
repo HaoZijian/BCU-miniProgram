@@ -23,6 +23,17 @@
           "pathName": "pages/newActive/newActive",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/verify-CertListInner/verify-CertListInner",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/verify-CertListInner/verify-CertListInner",
+          "pathName": "pages/verify-CertListInner/verify-CertListInner",
+          "scene": null
         }
       ]
     }

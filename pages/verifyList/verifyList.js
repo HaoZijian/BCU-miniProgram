@@ -15,12 +15,6 @@ Page({
     this.setData({
       flag: 1
     })
-    if(this.data.flag == 1) {
-      Notify({
-        type: 'success',
-        message: '已通过审核，加分成功！',
-      });
-    }
   },
 
   refuse(e) {
@@ -28,12 +22,6 @@ Page({
     this.setData({
       flag: 2
     })
-    if(this.data.flag == 2) {
-      Notify({
-        type: 'warning',
-        message: '已拒绝！',
-      });
-    }
   },
 
   verify(pass, uname, index) {
@@ -50,12 +38,24 @@ Page({
         'content-Type': 'application/x-www-form-urlencoded'
       },
       success: res => {
-        console.log(index)
         let list = this.data.list
         list.splice(index, 1)
         this.setData({
           list
         })
+
+        if(this.data.flag == 2) {
+          Notify({
+            type: 'warning',
+            message: '已拒绝！',
+          });
+        }else if(this.data.flag == 1) {
+          Notify({
+            type: 'success',
+            message: '已通过审核，加分成功！',
+          });
+        }
+
       }
     })
   },

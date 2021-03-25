@@ -1,4 +1,5 @@
 <view class="page">
+  <van-notify id="van-notify" />
   <view class="title">证书/竞赛提交</view>
   <view class="uploader">
     <van-uploader file-list="{{ fileList }}" deletable="{{ true }}" bind:after-read="afterRead" />
@@ -9,6 +10,6 @@
     <van-field type="textarea" model:value="{{ remark }}" placeholder="请输入证书/竞赛说明"
       autosize=" { maxHeight: 100, minHeight: 50 }" />
   </view>
-  <button class="createBtn">提交</button>
+  <button class="createBtn" bindtap="submit">提交</button>
   <button class="certificateList" bindtap="toCertificateList">我的证书</button>
 </view>

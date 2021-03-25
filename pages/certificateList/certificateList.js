@@ -5,14 +5,30 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    list:[],
+    type:['审核中','审核通过','审核拒绝']
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.request({
+      url: 'https://bcuscm.mauac.com/applets/api.Certificate/certificate',
+      method: 'POST',
+      data: {
+        token: wx.getStorageSync('token'),
+        uid:wx.getStorageSync('uid')
+      },
+      header: {
+        'content-Type': 'application/x-www-form-urlencoded'
+      },
+      success: res => {
+        this.setData({
+          list: res.data.data
+        })
+      },
+    })
   },
 
   /**

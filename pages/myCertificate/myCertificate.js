@@ -1,4 +1,5 @@
 // pages/myCertificate/myCertificate.js
+import Notify from '../../@vant/weapp/dist/notify/notify';
 Page({
 
   /**
@@ -7,6 +8,9 @@ Page({
   data: {
     fileList: [],
     show: false,
+    name: '',
+    remark: '',
+    img: ''
   },
 
   toCertificateList() {
@@ -30,23 +34,66 @@ Page({
       },
       success(res) {
         console.log(res)
-        const {
-          fileList = []
-        } = that.data;
-        fileList.push({
-          ...file,
-          url: res.data
-        });
-        that.setData({
-          fileList
-        });
+        if (res.statusCode == 200) {
+          res.data=JSON.parse(res.data)
+          const {
+            fileList = []
+          } = that.data;
+          fileList.push({
+            ...file,
+            url: res.data.data
+          });
+          that.setData({
+            fileList,
+            img: res.data.data
+          });
+        }else{
+          Notify({
+            type: 'danger',
+            message: '上传失败 可能文件过大'
+          });
+        }
       },
     });
   },
 
+  submit() {
+    wx.request({
+      url: 'https://bcuscm.mauac.com/applets/api.Certificate/certificateadd',
+      method: 'POST',
+      data: {
+        token: wx.getStorageSync('token'),
+        uid: wx.getStorageSync('uid'),
+        cname: this.data.name,
+        cremark: this.data.remark,
+        cimg: this.data.img
+      },
+      header: {
+        'content-Type': 'application/x-www-form-urlencoded'
+      },
+      success: res => {
+        if (res.data.code == 1) {
+          Notify({
+            type: 'success',
+            message: '新增成功'
+          });
+          setTimeout(() => {
+            wx.navigateTo({
+              url: '/pages/certificateList/certificateList',
+            })
+          }, 1000);
+        } else {
+          Notify({
+            type: 'danger',
+            message: '未知错误'
+          });
+        }
+      },
+    })
+  },
+
   onChange(event) {
     // event.detail 为当前输入的值
-    console.log(event.detail);
   },
 
   /**

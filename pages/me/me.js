@@ -11,7 +11,7 @@ Page({
     xuebu: '',
     class: '',
     canShow: true,
-    ebranch: wx.getStorageSync('ebranch'),
+    ebranch: '',
     logintype: wx.getStorageSync('type')
   },
 
@@ -47,7 +47,6 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
   },
 
   /**
@@ -103,6 +102,15 @@ Page({
       success: res => {
         this.setData({
           class: res.data,
+          canShow: false
+        })
+      }
+    })
+    wx.getStorage({
+      key: 'ebranch',
+      success: res => {
+        this.setData({
+          ebranch: res.data,
           canShow: false
         })
       }

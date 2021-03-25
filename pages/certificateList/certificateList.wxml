@@ -4,12 +4,13 @@
     <view class="options" wx:for-items="{{list}}" wx:key="id" data-index="{{item.id}}">
       <van-row>
         <van-col span="8">
-          <image class="img" src="{{item.aimg}}"></image>
+          <image class="img" src="{{item.cimg}}"></image>
         </van-col>
         <view class="text-area">
           <van-col span="8">
-            <view class="text">名称：</view>
-            <view class="text">说明：</view>
+            <view class="text">名称：{{item.cname}}</view>
+            <view class="text">说明：{{item.cremark}}</view>
+            <view class="text">状态：{{type[item.sh_status]}}</view>
           </van-col>
         </view>
       </van-row>

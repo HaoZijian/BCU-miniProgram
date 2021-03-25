@@ -7,9 +7,9 @@ Page({
     username: '',
     password: '',
     show: false,
-    columns: ['未选择', '学生', '教师'],
-    value1: '未选择',
-    logintype: '',
+    columns: [ '学生', '教师'],
+    value1: '学生',
+    logintype: 1,
     index: 0,
   },
 
@@ -32,11 +32,11 @@ Page({
       value1: event.detail.value,
       index: event.detail.index
     })
-    if (this.data.index == 1) {
+    if (this.data.index == 0) {
       that.setData({
         logintype: 1
       })
-    } else if (this.data.index == 2) {
+    } else if (this.data.index == 1) {
       that.setData({
         logintype: 2
       })
@@ -64,7 +64,8 @@ Page({
           wx.setStorageSync('xuebu', res.data.data.ministry)
           wx.setStorageSync('class', res.data.data.class)
           wx.setStorageSync('token', res.data.data.token)
-          wx.setStorageSync('ebranch', res.data.data.ebranch)
+          wx.setStorageSync('ebranch', res.data.data.ebranch+'')
+          wx.setStorageSync('uid', res.data.data.id)
           wx.setStorageSync('type', this.data.logintype)
 
           wx.navigateBack({
